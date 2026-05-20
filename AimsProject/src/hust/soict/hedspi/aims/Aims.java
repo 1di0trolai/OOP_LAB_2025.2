@@ -1,4 +1,7 @@
-package Lab02.AimsProject;
+package hust.soict.hedspi.aims;
+
+import hust.soict.hedspi.aims.cart.Cart;
+import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
 
 public class Aims {
     public static void main(String[] args) {
@@ -16,16 +19,19 @@ public class Aims {
         anOrder.addDigitalVideoDisc(dvd3);
         anOrder.addDigitalVideoDisc(dvd4);
 
-        System.out.println("Cart contains:");
-        System.out.println(dvd1.getId() + " " + dvd1.getTitle() + " " + dvd1.getCost());
-        System.out.println(dvd2.getId() + " " + dvd2.getTitle() + " " + dvd2.getCost());
-        System.out.println(dvd3.getId() + " " + dvd3.getTitle() + " " + dvd3.getCost());
-        System.out.println(dvd4.getId() + " " + dvd4.getTitle() + " " + dvd4.getCost());
+        // Print cart
+        anOrder.print();
 
-        System.out.println("Total cost: " + anOrder.totalCost());
+        // Search by title
+        anOrder.searchByTitle("Harry Potter");
 
-        anOrder.deleteDigitalVideoDisc(dvd4);
+        // Search by id
+        anOrder.searchById(3);
 
-        System.out.println("Total cost: " + anOrder.totalCost());
+        // Remove a DVD
+        anOrder.removeDigitalVideoDisc(dvd4);
+
+        // Print cart after removal
+        anOrder.print();
     }
 }
