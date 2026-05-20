@@ -1,0 +1,4 @@
+1. lớp Media, có thể là các lớp con của Media 
+2. CompareTo tạo ra một thứ tự ưu tiên mặc định, VD: ta so sánh tiêu đề trước, nếu giống nhau ta so sánh giá 
+3. Không thể vì ta chỉ có thể override phương thức duy nhất 1 lần
+4. Ta sử dụng đa hình, ghi đè lại phương thức ở trong Dvd
