@@ -1,3 +1,5 @@
+package OtherProjects.src.hust.soict.hedspi.lab01;
+
 import javax.swing.JOptionPane;
 
 public class Ex226 {

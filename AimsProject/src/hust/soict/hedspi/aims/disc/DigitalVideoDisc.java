@@ -1,4 +1,4 @@
-package Lab02.AimsProject;
+package hust.soict.hedspi.aims.disc;
 
 public class DigitalVideoDisc {
     private String title;
@@ -10,6 +10,7 @@ public class DigitalVideoDisc {
     private static int nbDigitalVideoDiscs = 0;
     private int id;
 
+    // Getters
     public String getTitle() {
         return title;
     }
@@ -30,60 +31,86 @@ public class DigitalVideoDisc {
         return cost;
     }
 
-    // DVD1
+    public int getId() {
+        return id;
+    }
+
+    // Setters (e.g. setTitle was requested for TestPassingParameter)
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
+
+    // Constructors
     public DigitalVideoDisc(String title) {
         super();
         this.title = title;
-
         nbDigitalVideoDiscs++;
         this.id = nbDigitalVideoDiscs;
     }
 
-    // DVD2
     public DigitalVideoDisc(String title, String category, float cost) {
         super();
         this.title = title;
         this.category = category;
         this.cost = cost;
-
         nbDigitalVideoDiscs++;
         this.id = nbDigitalVideoDiscs;
     }
 
-    // DVD3
     public DigitalVideoDisc(String title, String category, String director, float cost) {
         super();
-        this.director = director;
         this.title = title;
         this.category = category;
+        this.director = director;
         this.cost = cost;
-
         nbDigitalVideoDiscs++;
         this.id = nbDigitalVideoDiscs;
     }
 
-    // DVD4
+    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
+        super();
+        this.title = title;
+        this.category = category;
+        this.director = director;
+        this.length = length;
+        this.cost = cost;
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
+    }
+
     public DigitalVideoDisc(String title, String category, String director, float cost, int length) {
         super();
-        this.director = director;
         this.title = title;
         this.category = category;
+        this.director = director;
         this.cost = cost;
         this.length = length;
-
         nbDigitalVideoDiscs++;
         this.id = nbDigitalVideoDiscs;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public boolean isMatch(String title) {
+        return this.title.toLowerCase().contains(title.toLowerCase());
     }
 
-    public static int getNbDigitalVideoDiscs() {
-        return nbDigitalVideoDiscs;
-    }
-
-    public int getId() {
-        return id;
+    @Override
+    public String toString() {
+        return "DVD - " + title + " - " + category + " - " + director + " - " + length + ": " + cost + " $";
     }
 }
